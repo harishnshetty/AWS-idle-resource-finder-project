@@ -1,6 +1,13 @@
 
 ## Required Setup
 
+
+# One command to install everything
+```bash
+curl -sSL https://raw.githubusercontent.com/harishnshetty/AWS-idle-resource-finder-project/install_dependencies.sh | bash
+```
+
+
 ```bash
 # Update package list
 sudo apt-get update
@@ -16,18 +23,6 @@ aws --version
 sudo apt-get install -y jq bc 
 ```
 
-
-## Simple bash Command to Cross Check
 ```bash
-#!/bin/bash
-echo "🔍 Checking dependencies..."
-command -v aws && echo "✅ AWS CLI installed" || echo "❌ AWS CLI missing"
-command -v jq && echo "✅ jq installed" || echo "❌ jq missing" 
-command -v bc && echo "✅ bc installed" || echo "❌ bc missing"
-
-echo "🔍 Checking AWS configuration..."
-aws sts get-caller-identity && echo "✅ AWS credentials working" || echo "❌ AWS credentials issue"
-
-echo "🔍 Checking script permissions..."
-ls -la *.sh | grep -v ^d
+aws configure
 ```
