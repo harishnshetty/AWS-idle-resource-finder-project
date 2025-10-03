@@ -422,11 +422,11 @@ echo "<div class='stat-number' id='total-regions'>$REGION_COUNT</div>"
 echo "<div class='stat-label'>Regions Selected</div>"
 echo "</div>"
 echo "<div class='stat-card'>"
-echo "<div class='stat-number'>27</div>"
+echo "<div class='stat-number'>42</div>"
 echo "<div class='stat-label'>Security Checks</div>"
 echo "</div>"
 echo "<div class='stat-card'>"
-echo "<div class='stat-number'>250+</div>"
+echo "<div class='stat-number'>500+</div>"
 echo "<div class='stat-label'>Resources Analyzed</div>"
 echo "</div>"
 echo "</div>"
@@ -498,7 +498,7 @@ run_check() {
 }
 
 REGIONS_SCANNED=0
-REGION_CHECKS=27  # Updated number of checks per region
+REGION_CHECKS=42  # Updated to reflect all checks
 
 echo "🚀 Starting audit..."
 echo "=============================================="
@@ -609,6 +609,79 @@ for REGION in "${SELECTED_REGIONS[@]}"; do
     echo "</div>"
     echo "</div>"
     
+    # Serverless & AI/ML Services Section
+    echo "<div class='service-section'>"
+    echo "<div class='service-header'>"
+    echo "<div class='service-icon'>⚡</div>"
+    echo "<h3 class='service-title'>Serverless & AI/ML Services</h3>"
+    echo "<div class='service-badge'>8 Checks</div>"
+    echo "</div>"
+    echo "<div class='checks-grid'>"
+    run_check "Idle Lambda Functions" "./check_idle_lambda.sh" "λ"
+    run_check "Large Lambda Packages" "./check_large_lambda_packages.sh" "📏"
+    run_check "Lambda Old Runtimes" "./check_lambda_old_runtimes.sh" "🕐"
+    run_check "ECR Old Images" "./check_ecr_old_images.sh" "📦"
+    run_check "SageMaker Idle Instances" "./check_sagemaker_idle_instances.sh" "🤖"
+    run_check "Comprehend Usage" "./check_comprehend_usage.sh" "🈯"
+    run_check "ECS Idle Services" "./check_ecs_idle_services.sh" "🏗️"
+    run_check "Glue Idle Jobs" "./check_glue_idle_jobs.sh" "🕷️"
+    echo "</div>"
+    echo "</div>"
+    
+    # Data & Analytics Section
+    echo "<div class='service-section'>"
+    echo "<div class='service-header'>"
+    echo "<div class='service-icon'>📊</div>"
+    echo "<h3 class='service-title'>Data & Analytics</h3>"
+    echo "<div class='service-badge'>3 Checks</div>"
+    echo "</div>"
+    echo "<div class='checks-grid'>"
+    run_check "Redshift Utilization" "./check_redshift_utilization.sh" "🔴"
+    run_check "EMR Idle Clusters" "./check_emr_idle_clusters.sh" "🔧"
+    echo "</div>"
+    echo "</div>"
+    
+    # Developer Tools Section
+    echo "<div class='service-section'>"
+    echo "<div class='service-header'>"
+    echo "<div class='service-icon'>🛠️</div>"
+    echo "<h3 class='service-title'>Developer Tools</h3>"
+    echo "<div class='service-badge'>2 Checks</div>"
+    echo "</div>"
+    echo "<div class='checks-grid'>"
+    run_check "CodeBuild Old Projects" "./check_codebuild_old_projects.sh" "🏗️"
+    run_check "CodePipeline Idle Pipelines" "./check_codepipeline_idle_pipelines.sh" "⚙️"
+    echo "</div>"
+    echo "</div>"
+    
+    # Management & Governance Section
+    echo "<div class='service-section'>"
+    echo "<div class='service-header'>"
+    echo "<div class='service-icon'>🎯</div>"
+    echo "<h3 class='service-title'>Management & Governance</h3>"
+    echo "<div class='service-badge'>5 Checks</div>"
+    echo "</div>"
+    echo "<div class='checks-grid'>"
+    run_check "Trusted Advisor" "./check_trusted_advisor.sh" "📋"
+    run_check "Cost Explorer Data" "./check_cost_explorer_data.sh" "💰"
+    run_check "Service Quotas" "./check_service_quotas.sh" "🎯"
+    run_check "KMS Orphaned Keys" "./check_kms_orphaned_keys.sh" "🔑"
+    run_check "Secrets Manager Old Secrets" "./check_secrets_manager_old_secrets.sh" "🔐"
+    echo "</div>"
+    echo "</div>"
+    
+    # Networking & Security Section
+    echo "<div class='service-section'>"
+    echo "<div class='service-header'>"
+    echo "<div class='service-icon'>🌐</div>"
+    echo "<h3 class='service-title'>Networking & Security</h3>"
+    echo "<div class='service-badge'>1 Check</div>"
+    echo "</div>"
+    echo "<div class='checks-grid'>"
+    run_check "VPC Flow Logs" "./check_vpc_flow_logs.sh" "📝"
+    echo "</div>"
+    echo "</div>"
+    
     echo "<div style='text-align: center; margin-top: 20px;'>"
     echo "<div class='status-badge status-ok'>✅ Audit Completed for $REGION</div>"
     echo "</div>"
@@ -676,7 +749,6 @@ echo "</div>"
 echo "<p style='margin-top: 15px; color: #666; font-size: 0.9rem;'>Made with ❤️ by Harish N Shetty | DevOps Engineer</p>"
 echo "</div>"
 echo "</div>"
-
 
 echo "</div>" # closes app-container
 echo "</body></html>"

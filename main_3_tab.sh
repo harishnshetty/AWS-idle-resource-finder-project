@@ -86,7 +86,7 @@ echo "<head>
     }
     
     .app-container {
-      max-width: 1400px;
+      max-width: 1800px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -179,11 +179,61 @@ echo "<head>
       font-weight: 600;
     }
     
+    /* Tabs Navigation */
+    .tabs-container {
+      margin-bottom: 25px;
+    }
+    
+    .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: rgba(248, 249, 250, 0.8);
+      border-radius: 15px;
+      border: 1px solid #e9ecef;
+    }
+    
+    .tab-btn {
+      padding: 12px 20px;
+      background: white;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #6c757d;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+    
+    .tab-btn:hover {
+      border-color: #667eea;
+      color: #667eea;
+      transform: translateY(-2px);
+    }
+    
+    .tab-btn.active {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-color: #667eea;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .tab-btn.all-tab {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+      border-color: #27ae60;
+    }
+    
+    /* Single Column Layout - One block per line */
     .checks-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
     
     .check-card {
@@ -192,15 +242,16 @@ echo "<head>
       padding: 25px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
       border-left: 5px solid;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      min-height: 400px;
+      min-height: 300px;
+      width: 100%;
     }
     
     .check-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
     
     .check-card.ok { border-left-color: #27ae60; }
@@ -211,27 +262,45 @@ echo "<head>
     .check-header {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
       margin-bottom: 20px;
       flex-shrink: 0;
     }
     
     .check-icon {
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
+      font-size: 1.8rem;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background: rgba(52, 152, 219, 0.1);
+      flex-shrink: 0;
+    }
+    
+    .check-title-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex-grow: 1;
     }
     
     .check-title {
-      font-size: 1.3rem;
-      font-weight: 600;
+      font-size: 1.4rem;
+      font-weight: 700;
       color: #2c3e50;
       margin: 0;
+    }
+    
+    .service-badge {
+      background: #6c757d;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      align-self: flex-start;
     }
     
     .check-content {
@@ -239,23 +308,24 @@ echo "<head>
       border-radius: 10px;
       padding: 20px;
       font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.6;
       flex-grow: 1;
       overflow-y: auto;
       border: 1px solid #e9ecef;
-      min-height: 250px;
-      max-height: 500px;
+      min-height: 150px;
+      max-height: 350px;
     }
     
     .status-badge {
       display: inline-block;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: 600;
       margin-top: 15px;
       flex-shrink: 0;
+      align-self: flex-start;
     }
     
     .status-ok { background: #d5f4e6; color: #27ae60; }
@@ -309,40 +379,12 @@ echo "<head>
       background: #a8a8a8;
     }
     
-    /* Responsive design */
-    @media (max-width: 768px) {
-      .app-container {
-        padding: 10px;
-      }
-      
-      header {
-        padding: 25px;
-      }
-      
-      .header-content h1 {
-        font-size: 2rem;
-      }
-      
-      .checks-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .check-card {
-        min-height: 350px;
-      }
-      
-      .check-content {
-        min-height: 200px;
-        font-size: 0.9rem;
-        padding: 15px;
-      }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
-    /* Animation for cards */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -358,12 +400,63 @@ echo "<head>
       animation: fadeInUp 0.6s ease forwards;
     }
     
-    .check-card:nth-child(odd) {
-      animation-delay: 0.1s;
+    .check-card.hidden {
+      display: none;
     }
     
-    .check-card:nth-child(even) {
-      animation-delay: 0.2s;
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .app-container {
+        padding: 10px;
+      }
+      
+      header {
+        padding: 25px;
+      }
+      
+      .header-content h1 {
+        font-size: 2rem;
+      }
+      
+      .tabs-nav {
+        flex-direction: column;
+      }
+      
+      .tab-btn {
+        justify-content: center;
+        text-align: center;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .check-card {
+        min-height: 280px;
+        padding: 20px;
+      }
+      
+      .check-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      
+      .check-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+      
+      .check-title {
+        font-size: 1.2rem;
+      }
+      
+      .check-content {
+        min-height: 120px;
+        font-size: 0.9rem;
+        padding: 15px;
+      }
     }
   </style>
 </head>
@@ -403,6 +496,7 @@ run_check() {
     local TITLE="$1"
     local SCRIPT="$2"
     local ICON="$3"
+    local CATEGORY="$4"
     
     # Determine card class based on script output
     local CARD_CLASS="info"
@@ -443,10 +537,13 @@ run_check() {
         TOTAL_ERRORS=$((TOTAL_ERRORS + 1))
     fi
     
-    echo "<div class='check-card $CARD_CLASS'>"
+    echo "<div class='check-card $CARD_CLASS' data-category='$CATEGORY'>"
     echo "<div class='check-header'>"
     echo "<div class='check-icon'>$ICON</div>"
+    echo "<div class='check-title-container'>"
     echo "<h3 class='check-title'>$TITLE</h3>"
+    echo "<span class='service-badge'>$CATEGORY</span>"
+    echo "</div>"
     echo "</div>"
     echo "<div class='check-content'>"
     echo "$OUTPUT"
@@ -473,68 +570,91 @@ for REGION in "${SELECTED_REGIONS[@]}"; do
     echo "<h2>🌍 Region: $REGION</h2>"
     echo "<div class='region-badge'>$REGION_CHECKS Checks</div>"
     echo "</div>"
-    echo "<div class='checks-grid'>"
-
-    # Core cost optimization checks
-    run_check "Budget Alerts" "./check_budgets.sh" "💰"
-    run_check "Resource Tagging" "./check_untagged_resources.sh" "🏷️"
-    run_check "Idle EC2 Instances" "./check_idle_ec2.sh" "🛌"
-    run_check "Old AMIs" "./check_old_amis.sh" "🖼️"
-    run_check "EBS Snapshots" "./check_old_ebs_snapshots.sh" "💾"
-    run_check "Unused AMIs" "./check_unused_amis.sh" "🔍"
-    run_check "Orphaned Snapshots" "./check_orphaned_snapshots.sh" "🗑️"
-    run_check "S3 Lifecycle" "./check_s3_lifecycle.sh" "♻️"
-    run_check "RDS Snapshots" "./check_old_rds_snapshots.sh" "📅"
-    run_check "Unattached EBS" "./check_forgotten_ebs.sh" "🧹"
-    run_check "Data Transfer" "./check_data_transfer_risks.sh" "🌐"
-    run_check "On-Demand Instances" "./check_on_demand_instances.sh" "💸"
-    run_check "Load Balancers" "./check_idle_load_balancers.sh" "🛑"
-    run_check "Route 53 DNS" "./check_route53.sh" "🌍"
-    run_check "EKS Clusters" "./check_eks_clusters.sh" "☸️"
-    run_check "IAM Usage" "./check_iam_usage.sh" "🔐"
-    run_check "Security Groups" "./check_security_groups.sh" "🛡️"
-    run_check "CloudWatch Alarms" "./check_cloudwatch_alarms.sh" "📈"
-
-    # Additional security and compliance checks
-    run_check "Encryption Audit" "./check_encryption.sh" "🔐"
-    run_check "Public Access Audit" "./check_public_access.sh" "🌐"
-    run_check "Compliance Standards" "./check_compliance_standards.sh" "📋"
-    run_check "GuardDuty Findings" "./check_guardduty_findings.sh" "🛡️"
-    run_check "AWS Config Rules" "./check_config_rules.sh" "⚙️"
-    run_check "RI Utilization" "./check_reserved_instances.sh" "💰"
-    run_check "Cost Anomalies" "./check_cost_anomalies.sh" "📊"
-    run_check "Backup Compliance" "./check_backup_compliance.sh" "💾"
-    run_check "Logging & Monitoring" "./check_logging_monitoring.sh" "📝"
-
-    # New Serverless & AI/ML checks
-    run_check "Idle Lambda Functions" "./check_idle_lambda.sh" "λ"
-    run_check "Large Lambda Packages" "./check_large_lambda_packages.sh" "📏"
-    run_check "Lambda Old Runtimes" "./check_lambda_old_runtimes.sh" "🕐"
-    run_check "ECR Old Images" "./check_ecr_old_images.sh" "📦"
-    run_check "SageMaker Idle Instances" "./check_sagemaker_idle_instances.sh" "🤖"
-    run_check "Comprehend Usage" "./check_comprehend_usage.sh" "🈯"
-    run_check "ECS Idle Services" "./check_ecs_idle_services.sh" "🏗️"
-    run_check "Glue Idle Jobs" "./check_glue_idle_jobs.sh" "🕷️"
-
-    # New Data & Analytics checks
-    run_check "Redshift Utilization" "./check_redshift_utilization.sh" "🔴"
-    run_check "EMR Idle Clusters" "./check_emr_idle_clusters.sh" "🔧"
-
-    # New Developer Tools checks
-    run_check "CodeBuild Old Projects" "./check_codebuild_old_projects.sh" "🏗️"
-    run_check "CodePipeline Idle Pipelines" "./check_codepipeline_idle_pipelines.sh" "⚙️"
-
-    # New Management & Governance checks
-    run_check "Trusted Advisor" "./check_trusted_advisor.sh" "📋"
-    run_check "Cost Explorer Data" "./check_cost_explorer_data.sh" "💰"
-    run_check "Service Quotas" "./check_service_quotas.sh" "🎯"
-    run_check "KMS Orphaned Keys" "./check_kms_orphaned_keys.sh" "🔑"
-    run_check "Secrets Manager Old Secrets" "./check_secrets_manager_old_secrets.sh" "🔐"
-
-    # New Networking & Security checks
-    run_check "VPC Flow Logs" "./check_vpc_flow_logs.sh" "📝"
+    
+    # Tabs Navigation
+    echo "<div class='tabs-container'>"
+    echo "<div class='tabs-nav'>"
+    echo "<button class='tab-btn all-tab active' onclick=\"filterChecks('$REGION', 'all', this)\">📊 All Checks</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'compute', this)\">🖥️ Compute</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'storage', this)\">💾 Storage</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'database', this)\">🗄️ Database</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'networking', this)\">🌐 Networking</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'security', this)\">🔐 Security</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'monitoring', this)\">📈 Monitoring</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'serverless', this)\">⚡ Serverless</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'developer', this)\">🛠️ Developer</button>"
+    echo "<button class='tab-btn' onclick=\"filterChecks('$REGION', 'management', this)\">🎯 Management</button>"
+    echo "</div>"
+    
+    # Single Column Layout - One block per line
+    echo "<div class='checks-grid' id='$REGION-checks-grid'>"
+    
+    # Compute Checks
+    run_check "Idle EC2 Instances" "./check_idle_ec2.sh" "🛌" "compute"
+    run_check "Old AMIs" "./check_old_amis.sh" "🖼️" "compute"
+    run_check "Unused AMIs" "./check_unused_amis.sh" "🔍" "compute"
+    run_check "On-Demand Instances" "./check_on_demand_instances.sh" "💸" "compute"
+    run_check "RI Utilization" "./check_reserved_instances.sh" "💰" "compute"
+    run_check "EKS Clusters" "./check_eks_clusters.sh" "☸️" "compute"
+    run_check "ECS Idle Services" "./check_ecs_idle_services.sh" "🏗️" "compute"
+    
+    # Storage Checks
+    run_check "EBS Snapshots" "./check_old_ebs_snapshots.sh" "💾" "storage"
+    run_check "Orphaned Snapshots" "./check_orphaned_snapshots.sh" "🗑️" "storage"
+    run_check "Unattached EBS" "./check_forgotten_ebs.sh" "🧹" "storage"
+    run_check "S3 Lifecycle" "./check_s3_lifecycle.sh" "♻️" "storage"
+    run_check "Backup Compliance" "./check_backup_compliance.sh" "💾" "storage"
+    run_check "ECR Old Images" "./check_ecr_old_images.sh" "📦" "storage"
+    
+    # Database Checks
+    run_check "RDS Snapshots" "./check_old_rds_snapshots.sh" "📅" "database"
+    run_check "Data Transfer" "./check_data_transfer_risks.sh" "🌐" "database"
+    run_check "Redshift Utilization" "./check_redshift_utilization.sh" "🔴" "database"
+    
+    # Networking Checks
+    run_check "Load Balancers" "./check_idle_load_balancers.sh" "🛑" "networking"
+    run_check "Route 53 DNS" "./check_route53.sh" "🌍" "networking"
+    run_check "Security Groups" "./check_security_groups.sh" "🛡️" "networking"
+    run_check "Public Access Audit" "./check_public_access.sh" "🌐" "networking"
+    run_check "VPC Flow Logs" "./check_vpc_flow_logs.sh" "📝" "networking"
+    
+    # Security Checks
+    run_check "IAM Usage" "./check_iam_usage.sh" "🔐" "security"
+    run_check "Encryption Audit" "./check_encryption.sh" "🔐" "security"
+    run_check "GuardDuty Findings" "./check_guardduty_findings.sh" "🛡️" "security"
+    run_check "AWS Config Rules" "./check_config_rules.sh" "⚙️" "security"
+    run_check "Compliance Standards" "./check_compliance_standards.sh" "📋" "security"
+    run_check "KMS Orphaned Keys" "./check_kms_orphaned_keys.sh" "🔑" "security"
+    run_check "Secrets Manager Old Secrets" "./check_secrets_manager_old_secrets.sh" "🔐" "security"
+    
+    # Monitoring Checks
+    run_check "Budget Alerts" "./check_budgets.sh" "💰" "monitoring"
+    run_check "CloudWatch Alarms" "./check_cloudwatch_alarms.sh" "📈" "monitoring"
+    run_check "Resource Tagging" "./check_untagged_resources.sh" "🏷️" "monitoring"
+    run_check "Logging & Monitoring" "./check_logging_monitoring.sh" "📝" "monitoring"
+    run_check "Cost Anomalies" "./check_cost_anomalies.sh" "📊" "monitoring"
+    
+    # Serverless & AI/ML Checks
+    run_check "Idle Lambda Functions" "./check_idle_lambda.sh" "λ" "serverless"
+    run_check "Large Lambda Packages" "./check_large_lambda_packages.sh" "📏" "serverless"
+    run_check "Lambda Old Runtimes" "./check_lambda_old_runtimes.sh" "🕐" "serverless"
+    run_check "SageMaker Idle Instances" "./check_sagemaker_idle_instances.sh" "🤖" "serverless"
+    run_check "Comprehend Usage" "./check_comprehend_usage.sh" "🈯" "serverless"
+    run_check "Glue Idle Jobs" "./check_glue_idle_jobs.sh" "🕷️" "serverless"
+    run_check "EMR Idle Clusters" "./check_emr_idle_clusters.sh" "🔧" "serverless"
+    
+    # Developer Tools Checks
+    run_check "CodeBuild Old Projects" "./check_codebuild_old_projects.sh" "🏗️" "developer"
+    run_check "CodePipeline Idle Pipelines" "./check_codepipeline_idle_pipelines.sh" "⚙️" "developer"
+    
+    # Management Checks
+    run_check "Trusted Advisor" "./check_trusted_advisor.sh" "📋" "management"
+    run_check "Cost Explorer Data" "./check_cost_explorer_data.sh" "💰" "management"
+    run_check "Service Quotas" "./check_service_quotas.sh" "🎯" "management"
     
     echo "</div>" # closes checks-grid
+    echo "</div>" # closes tabs-container
+    
     echo "<div style='text-align: center; margin-top: 20px;'>"
     echo "<div class='status-badge status-ok'>✅ Audit Completed for $REGION</div>"
     echo "</div>"
@@ -543,6 +663,59 @@ for REGION in "${SELECTED_REGIONS[@]}"; do
     echo "✅ Completed region: $REGION"
     echo "----------------------------------------------"
 done
+
+# JavaScript for filtering functionality
+echo "<script>
+function filterChecks(region, category, element) {
+    // Remove active class from all buttons in the same tab navigation
+    const tabNav = element.parentElement;
+    const buttons = tabNav.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Add active class to clicked button
+    element.classList.add('active');
+    
+    // Get all check cards in this region
+    const grid = document.getElementById(region + '-checks-grid');
+    const cards = grid.querySelectorAll('.check-card');
+    
+    // Show/hide cards based on category
+    cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+            card.style.animation = 'fadeInUp 0.6s ease forwards';
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
+
+// Add keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (e.altKey) {
+        const regions = document.querySelectorAll('.region-section');
+        regions.forEach(region => {
+            const tabs = region.querySelectorAll('.tab-btn');
+            tabs.forEach((tab, index) => {
+                if (e.key === (index).toString() && index < 10) {
+                    tab.click();
+                }
+            });
+        });
+    }
+});
+
+// Initialize all regions to show all checks
+document.addEventListener('DOMContentLoaded', function() {
+    const regions = document.querySelectorAll('.region-section');
+    regions.forEach(region => {
+        const regionId = region.querySelector('.checks-grid').id.replace('-checks-grid', '');
+        filterChecks(regionId, 'all', region.querySelector('.all-tab'));
+    });
+});
+</script>"
 
 # Calculate totals
 TOTAL_CHECKS=$((REGIONS_SCANNED * REGION_CHECKS))
