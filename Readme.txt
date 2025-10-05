@@ -4,7 +4,7 @@
 
 # One command to install everything
 ```bash
-curl -sSL https://raw.githubusercontent.com/harishnshetty/AWS-idle-resource-finder-project/install_dependencies.sh | bash
+curl -sSL https://raw.githubusercontent.com/harishnshetty/AWS-idle-resource-finder-project/main/install_dependencies.sh | bash
 ```
 
 
