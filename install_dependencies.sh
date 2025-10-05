@@ -32,9 +32,6 @@ fi
 echo "📦 Installing additional utilities..."
 sudo apt install -y moreutils tree htop ncdu
 
-# Install browser for HTML viewing
-echo "📦 Installing browser for HTML reports..."
-sudo apt install -y firefox-esr
 
 # Verify installations
 echo "🔍 Verifying installations..."
