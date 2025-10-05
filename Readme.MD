@@ -39,3 +39,9 @@ sudo apt-get install -y jq bc
 ```bash
 aws configure
 ```
+
+
+
+[![Video Tutorial](https://github.com/harishnshetty/image-data-project/blob/4f3e83db537207499132861185a5bc14a69e6ab2/sample-image.png)](https://www.youtube.com/@devopsHarishNShetty)
+
+
