@@ -1,5 +1,18 @@
 
+# 🚀 AWS Cost & Security Audit (AWS Resource Finder )
+## Comprehensive cloud infrastructure assessment report
+
+
+
+## For more projects, check out  
+[https://harishnshetty.github.io/projects.html](https://harishnshetty.github.io/projects.html)
+
+[![Video Tutorial](https://github.com/harishnshetty/image-data-project/blob/8391945b71df68d8741bf225ce4af892cd308b99/awsresourcefinder.jpg)](https://youtu.be/KNH_qe1vJAg)
+
+
+
 ## Required Setup
+
 
 
 # One command to install everything
