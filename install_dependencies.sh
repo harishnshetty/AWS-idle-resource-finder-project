@@ -28,10 +28,6 @@ else
     echo "✅ AWS CLI already installed"
 fi
 
-# Install Python packages
-echo "📦 Installing Python packages..."
-pip3 install boto3 botocore pandas numpy matplotlib
-
 # Install additional utilities
 echo "📦 Installing additional utilities..."
 sudo apt install -y moreutils tree htop ncdu
