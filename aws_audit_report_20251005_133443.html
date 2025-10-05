@@ -19,7 +19,7 @@
     }
     
     .app-container {
-      max-width: 1800px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -112,79 +112,65 @@
       font-weight: 600;
     }
     
-    /* Tabs Navigation */
-    .tabs-container {
-      margin-bottom: 25px;
-    }
-    
-    .tabs-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-      padding: 15px;
+    .service-section {
       background: rgba(248, 249, 250, 0.8);
       border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 25px;
       border: 1px solid #e9ecef;
     }
     
-    .tab-btn {
-      padding: 12px 20px;
-      background: white;
-      border: 2px solid #e9ecef;
-      border-radius: 10px;
-      font-weight: 600;
-      color: #6c757d;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    .service-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #dee2e6;
     }
     
-    .tab-btn:hover {
-      border-color: #667eea;
-      color: #667eea;
-      transform: translateY(-2px);
+    .service-icon {
+      font-size: 1.8rem;
     }
     
-    .tab-btn.active {
-      background: linear-gradient(135deg, #667eea, #764ba2);
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 0;
+    }
+    
+    .service-badge {
+      background: #6c757d;
       color: white;
-      border-color: #667eea;
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: auto;
     }
     
-    .tab-btn.all-tab {
-      background: linear-gradient(135deg, #27ae60, #2ecc71);
-      color: white;
-      border-color: #27ae60;
-    }
-    
-    /* Single Column Layout - One block per line */
     .checks-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
     }
     
     .check-card {
       background: white;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid;
-      transition: all 0.3s ease;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      min-height: 300px;
-      width: 100%;
+      min-height: 200px;
     }
     
     .check-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
     }
     
     .check-card.ok { border-left-color: #27ae60; }
@@ -195,70 +181,51 @@
     .check-header {
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 15px;
       flex-shrink: 0;
     }
     
     .check-icon {
-      font-size: 1.8rem;
-      width: 50px;
-      height: 50px;
+      font-size: 1.3rem;
+      width: 35px;
+      height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background: rgba(52, 152, 219, 0.1);
-      flex-shrink: 0;
-    }
-    
-    .check-title-container {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      flex-grow: 1;
     }
     
     .check-title {
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 600;
       color: #2c3e50;
       margin: 0;
     }
     
-    .service-badge {
-      background: #6c757d;
-      color: white;
-      padding: 6px 14px;
-      border-radius: 15px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      align-self: flex-start;
-    }
-    
     .check-content {
       background: #f8f9fa;
-      border-radius: 10px;
-      padding: 20px;
+      border-radius: 8px;
+      padding: 15px;
       font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      line-height: 1.5;
       flex-grow: 1;
       overflow-y: auto;
       border: 1px solid #e9ecef;
-      min-height: 150px;
-      max-height: 350px;
+      min-height: 120px;
+      max-height: 300px;
     }
     
     .status-badge {
       display: inline-block;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 1rem;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-top: 15px;
+      margin-top: 12px;
       flex-shrink: 0;
-      align-self: flex-start;
     }
     
     .status-ok { background: #d5f4e6; color: #27ae60; }
@@ -295,46 +262,21 @@
     
     /* Scrollbar styling */
     .check-content::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
     }
     
     .check-content::-webkit-scrollbar-track {
       background: #f1f1f1;
-      border-radius: 4px;
+      border-radius: 3px;
     }
     
     .check-content::-webkit-scrollbar-thumb {
       background: #c1c1c1;
-      border-radius: 4px;
+      border-radius: 3px;
     }
     
     .check-content::-webkit-scrollbar-thumb:hover {
       background: #a8a8a8;
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .check-card {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    .check-card.hidden {
-      display: none;
     }
     
     /* Responsive design */
@@ -351,45 +293,52 @@
         font-size: 2rem;
       }
       
-      .tabs-nav {
-        flex-direction: column;
-      }
-      
-      .tab-btn {
-        justify-content: center;
-        text-align: center;
-      }
-      
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       
-      .check-card {
-        min-height: 280px;
+      .service-section {
         padding: 20px;
       }
       
-      .check-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+      .service-title {
+        font-size: 1.3rem;
       }
       
-      .check-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-      }
-      
-      .check-title {
-        font-size: 1.2rem;
+      .check-card {
+        min-height: 180px;
+        padding: 15px;
       }
       
       .check-content {
-        min-height: 120px;
+        min-height: 100px;
         font-size: 0.9rem;
-        padding: 15px;
+        padding: 12px;
       }
+    }
+    
+    /* Animation for cards */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .service-section {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .service-section:nth-child(odd) {
+      animation-delay: 0.1s;
+    }
+    
+    .service-section:nth-child(even) {
+      animation-delay: 0.2s;
     }
   </style>
 </head>
@@ -423,27 +372,17 @@
 <h2>🌍 Region: ap-south-1</h2>
 <div class='region-badge'>42 Checks</div>
 </div>
-<div class='tabs-container'>
-<div class='tabs-nav'>
-<button class='tab-btn all-tab active' onclick="filterChecks('ap-south-1', 'all', this)">📊 All Checks</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'compute', this)">🖥️ Compute</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'storage', this)">💾 Storage</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'database', this)">🗄️ Database</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'networking', this)">🌐 Networking</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'security', this)">🔐 Security</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'monitoring', this)">📈 Monitoring</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'serverless', this)">⚡ Serverless</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'developer', this)">🛠️ Developer</button>
-<button class='tab-btn' onclick="filterChecks('ap-south-1', 'management', this)">🎯 Management</button>
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>🖥️</div>
+<h3 class='service-title'>EC2 & Compute Services</h3>
+<div class='service-badge'>7 Checks</div>
 </div>
-<div class='checks-grid' id='ap-south-1-checks-grid'>
-<div class='check-card warn' data-category='compute'>
+<div class='checks-grid'>
+<div class='check-card warn'>
 <div class='check-header'>
 <div class='check-icon'>🛌</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Idle EC2 Instances</h3>
-<span class='service-badge'>compute</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for idle or oversized EC2 instances in ap-south-1
@@ -452,13 +391,10 @@
 </div>
 <span class='status-badge status-warn'>⚠️ Warning</span>
 </div>
-<div class='check-card warn' data-category='compute'>
+<div class='check-card warn'>
 <div class='check-header'>
 <div class='check-icon'>🖼️</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Old AMIs</h3>
-<span class='service-badge'>compute</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for AMIs older than 90 days in ap-south-1
@@ -467,13 +403,10 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='compute'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🔍</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Unused AMIs</h3>
-<span class='service-badge'>compute</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for unused AMIs (not associated with any EC2 instance) in ap-south-1
@@ -483,13 +416,10 @@
 </div>
 <span class='status-badge status-ok'>ℹ️ Info</span>
 </div>
-<div class='check-card info' data-category='compute'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>💸</div>
-<div class='check-title-container'>
 <h3 class='check-title'>On-Demand Instances</h3>
-<span class='service-badge'>compute</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for On-Demand EC2 instances in ap-south-1
@@ -498,13 +428,10 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='compute'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>💰</div>
-<div class='check-title-container'>
 <h3 class='check-title'>RI Utilization</h3>
-<span class='service-badge'>compute</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  💰 Reserved Instance Utilization
@@ -513,13 +440,10 @@
 </div>
 <span class='status-badge status-warn'>⚠️ Warning</span>
 </div>
-<div class='check-card info' data-category='compute'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>☸️</div>
-<div class='check-title-container'>
 <h3 class='check-title'>EKS Clusters</h3>
-<span class='service-badge'>compute</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking EKS clusters in region ap-south-1
@@ -528,27 +452,33 @@
 </div>
 <span class='status-badge status-warn'>⚠️ Warning</span>
 </div>
-<div class='check-card warn' data-category='compute'>
+<div class='check-card info'>
 <div class='check-header'>
-<div class='check-icon'>🏗️</div>
-<div class='check-title-container'>
-<h3 class='check-title'>ECS Idle Services</h3>
-<span class='service-badge'>compute</span>
-</div>
+<div class='check-icon'>📊</div>
+<h3 class='check-title'>Cost Anomalies</h3>
 </div>
 <div class='check-content'>
-🔍 Checking for idle ECS services (CPU &lt; 5.0%) in ap-south-1
-✅ No ECS clusters found in region ap-south-1
+ℹ️  📊 Cost Anomaly Detection
+---------------------------
+ℹ️  Checking for cost anomalies in last 7 days...
+ℹ️  💡 Enable AWS Cost Anomaly Detection for automated monitoring:
+ℹ️  https://console.aws.amazon.com/cost-management/home#/anomaly-detection
 </div>
-<span class='status-badge status-ok'>✓ Passed</span>
+<span class='status-badge status-ok'>ℹ️ Info</span>
 </div>
-<div class='check-card info' data-category='storage'>
+</div>
+</div>
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>💾</div>
+<h3 class='service-title'>Storage Services</h3>
+<div class='service-badge'>5 Checks</div>
+</div>
+<div class='checks-grid'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>💾</div>
-<div class='check-title-container'>
 <h3 class='check-title'>EBS Snapshots</h3>
-<span class='service-badge'>storage</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for EBS snapshots older than 90 days in ap-south-1
@@ -557,13 +487,10 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='storage'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🗑️</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Orphaned Snapshots</h3>
-<span class='service-badge'>storage</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for orphaned EBS snapshots (without existing volumes) in ap-south-1
@@ -573,13 +500,10 @@
 </div>
 <span class='status-badge status-ok'>ℹ️ Info</span>
 </div>
-<div class='check-card info' data-category='storage'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🧹</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Unattached EBS</h3>
-<span class='service-badge'>storage</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for unattached (forgotten) EBS volumes in ap-south-1
@@ -588,13 +512,10 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='storage'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>♻️</div>
-<div class='check-title-container'>
 <h3 class='check-title'>S3 Lifecycle</h3>
-<span class='service-badge'>storage</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking S3 buckets for missing lifecycle policies in ap-south-1
@@ -603,13 +524,10 @@
 </div>
 <span class='status-badge status-warn'>⚠️ Warning</span>
 </div>
-<div class='check-card info' data-category='storage'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>💾</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Backup Compliance</h3>
-<span class='service-badge'>storage</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  💾 Backup & Disaster Recovery Check
@@ -619,27 +537,19 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card warn' data-category='storage'>
-<div class='check-header'>
-<div class='check-icon'>📦</div>
-<div class='check-title-container'>
-<h3 class='check-title'>ECR Old Images</h3>
-<span class='service-badge'>storage</span>
 </div>
 </div>
-<div class='check-content'>
-🔍 Checking for old ECR images in ap-south-1 (&gt;90 days)
-✅ No ECR repositories found in region ap-south-1
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>🗄️</div>
+<h3 class='service-title'>Database Services</h3>
+<div class='service-badge'>2 Checks</div>
 </div>
-<span class='status-badge status-ok'>✓ Passed</span>
-</div>
-<div class='check-card info' data-category='database'>
+<div class='checks-grid'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>📅</div>
-<div class='check-title-container'>
 <h3 class='check-title'>RDS Snapshots</h3>
-<span class='service-badge'>database</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking for old RDS snapshots (older than 30 days) in ap-south-1
@@ -648,13 +558,10 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='database'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🌐</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Data Transfer</h3>
-<span class='service-badge'>database</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Auditing data transfer risks in ap-south-1
@@ -674,29 +581,19 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='database'>
-<div class='check-header'>
-<div class='check-icon'>🔴</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Redshift Utilization</h3>
-<span class='service-badge'>database</span>
 </div>
 </div>
-<div class='check-content'>
-🔍 Checking Redshift cluster utilization in ap-south-1
-📈 Summary:
-   Total Redshift clusters: 0
-   Underutilized clusters: 0
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>🌐</div>
+<h3 class='service-title'>Networking Services</h3>
+<div class='service-badge'>4 Checks</div>
 </div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
-</div>
-<div class='check-card info' data-category='networking'>
+<div class='checks-grid'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🛑</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Load Balancers</h3>
-<span class='service-badge'>networking</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking ALBs and NLBs for idle state (no traffic in past 3 days)
@@ -707,13 +604,10 @@
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='networking'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🌍</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Route 53 DNS</h3>
-<span class='service-badge'>networking</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking Route 53 DNS records and hosted zones
@@ -728,13 +622,10 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='networking'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🛡️</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Security Groups</h3>
-<span class='service-badge'>networking</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Scanning Security Groups for overly permissive rules
@@ -751,13 +642,10 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='networking'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🌐</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Public Access Audit</h3>
-<span class='service-badge'>networking</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  🌐 Checking Public Access to Resources
@@ -769,34 +657,19 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='networking'>
-<div class='check-header'>
-<div class='check-icon'>📝</div>
-<div class='check-title-container'>
-<h3 class='check-title'>VPC Flow Logs</h3>
-<span class='service-badge'>networking</span>
 </div>
 </div>
-<div class='check-content'>
-🔍 Checking VPC Flow Logs configuration in ap-south-1
-⚠️  VPC vpc-0366077d37eaa0c7e: No flow logs configured
-⚠️  VPC vpc-0695c45a8dac741e0: No flow logs configured
-
-📈 Summary:
-   Total VPCs: 2
-   VPCs with flow logs: 0
-   VPCs without flow logs: 2
-⚠️  Recommendation: Enable VPC Flow Logs for security monitoring and troubleshooting
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>🔐</div>
+<h3 class='service-title'>Security & Identity</h3>
+<div class='service-badge'>6 Checks</div>
 </div>
-<span class='status-badge status-warn'>⚠️ Warning</span>
-</div>
-<div class='check-card info' data-category='security'>
+<div class='checks-grid'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🔐</div>
-<div class='check-title-container'>
 <h3 class='check-title'>IAM Usage</h3>
-<span class='service-badge'>security</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  Checking IAM users, roles, and policies
@@ -843,13 +716,10 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='security'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🔐</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Encryption Audit</h3>
-<span class='service-badge'>security</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  🔐 Checking Encryption Status Across Services
@@ -862,13 +732,10 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='security'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🛡️</div>
-<div class='check-title-container'>
 <h3 class='check-title'>GuardDuty Findings</h3>
-<span class='service-badge'>security</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  🛡️  GuardDuty Findings Check
@@ -877,13 +744,10 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='security'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>⚙️</div>
-<div class='check-title-container'>
 <h3 class='check-title'>AWS Config Rules</h3>
-<span class='service-badge'>security</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  ⚙️  AWS Config Rules Compliance
@@ -892,13 +756,10 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>✓ Passed</span>
 </div>
-<div class='check-card info' data-category='security'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>📋</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Compliance Standards</h3>
-<span class='service-badge'>security</span>
-</div>
 </div>
 <div class='check-content'>
 ℹ️  📋 Compliance Standards Check
@@ -910,13 +771,349 @@ Total Records: 3
 </div>
 <span class='status-badge status-ok'>ℹ️ Info</span>
 </div>
-<div class='check-card info' data-category='security'>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>📝</div>
+<h3 class='check-title'>Logging & Monitoring</h3>
+</div>
+<div class='check-content'>
+ℹ️  📝 Logging & Monitoring Audit
+--------------------------------
+⚠️  ⚠️  No multi-region CloudTrail trail found
+</div>
+<span class='status-badge status-warn'>⚠️ Warning</span>
+</div>
+</div>
+</div>
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>📈</div>
+<h3 class='service-title'>Monitoring & Governance</h3>
+<div class='service-badge'>3 Checks</div>
+</div>
+<div class='checks-grid'>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>💰</div>
+<h3 class='check-title'>Budget Alerts</h3>
+</div>
+<div class='check-content'>
+ℹ️  Checking budgets for AWS Account: 970378220457
+--------------------------------------------------
+ℹ️  Budget: My Monthly Cost Budget
+✅   Budget alerts are configured.
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>📈</div>
+<h3 class='check-title'>CloudWatch Alarms</h3>
+</div>
+<div class='check-content'>
+ℹ️  Checking CloudWatch Alarms in ap-south-1
+--------------------------------------------
+⚠️  ⚠️ No CloudWatch alarms found in region ap-south-1
+</div>
+<span class='status-badge status-warn'>⚠️ Warning</span>
+</div>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>🏷️</div>
+<h3 class='check-title'>Resource Tagging</h3>
+</div>
+<div class='check-content'>
+ℹ️  Checking untagged resources for AWS Account: 970378220457
+-------------------------------------------------------------
+ℹ️  🔎 Checking EC2 Instances...
+ℹ️  🔎 Checking EBS Volumes...
+ℹ️  🔎 Checking S3 Buckets...
+ℹ️  🔎 Checking RDS Instances...
+ℹ️  🔎 Checking Lambda Functions...
+✅ Untagged resource check completed.
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+</div>
+</div>
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>⚡</div>
+<h3 class='service-title'>Serverless & AI/ML Services</h3>
+<div class='service-badge'>8 Checks</div>
+</div>
+<div class='checks-grid'>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>λ</div>
+<h3 class='check-title'>Idle Lambda Functions</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for idle Lambda functions in ap-south-1 (&gt;30 days)
+✅ No Lambda functions found in region ap-south-1
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>📏</div>
+<h3 class='check-title'>Large Lambda Packages</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for large Lambda deployment packages (&gt;50MB) in ap-south-1
+📈 Summary:
+   Total functions: 0
+   Large packages: 0
+</div>
+<span class='status-badge status-ok'>ℹ️ Info</span>
+</div>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>🕐</div>
+<h3 class='check-title'>Lambda Old Runtimes</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for Lambda functions with outdated runtimes in ap-south-1
+📈 Summary:
+   Total functions: 0
+   Outdated runtimes: 0
+</div>
+<span class='status-badge status-ok'>ℹ️ Info</span>
+</div>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>📦</div>
+<h3 class='check-title'>ECR Old Images</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for old ECR images in ap-south-1 (&gt;90 days)
+✅ No ECR repositories found in region ap-south-1
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>🤖</div>
+<h3 class='check-title'>SageMaker Idle Instances</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for idle SageMaker instances (&gt;24 hours) in ap-south-1
+📓 SageMaker Notebook Instances:
+
+🏋️ SageMaker Training Jobs (recent):
+
+📈 Summary:
+   Total SageMaker instances: 0
+   Potentially idle instances: 0
+</div>
+<span class='status-badge status-ok'>ℹ️ Info</span>
+</div>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>🈯</div>
+<h3 class='check-title'>Comprehend Usage</h3>
+</div>
+<div class='check-content'>
+🔍 Checking Amazon Comprehend usage in ap-south-1
+📊 Comprehend Usage Analysis:
+🈯 Dominant Language Detection Jobs:
+
+🏷️ Entity Recognition Jobs:
+
+🔧 Custom Classifiers:
+  Total custom classifiers: 0
+
+📈 Summary:
+   Total Comprehend jobs: 0
+   Active jobs: 0
+   Custom classifiers: 0
+ℹ️  No active Comprehend jobs detected
+</div>
+<span class='status-badge status-ok'>ℹ️ Info</span>
+</div>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>🏗️</div>
+<h3 class='check-title'>ECS Idle Services</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for idle ECS services (CPU &lt; 5.0%) in ap-south-1
+✅ No ECS clusters found in region ap-south-1
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>🕷️</div>
+<h3 class='check-title'>Glue Idle Jobs</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for idle Glue jobs/crawlers (&gt;30 days inactive) in ap-south-1
+🛠️ Glue Jobs:
+
+🕷️ Glue Crawlers:
+
+📈 Summary:
+   Total Glue jobs: 0
+   Idle jobs: 0
+   Total Glue crawlers: 0
+   Idle crawlers: 0
+</div>
+<span class='status-badge status-warn'>⚠️ Warning</span>
+</div>
+</div>
+</div>
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>📊</div>
+<h3 class='service-title'>Data & Analytics</h3>
+<div class='service-badge'>3 Checks</div>
+</div>
+<div class='checks-grid'>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>🔴</div>
+<h3 class='check-title'>Redshift Utilization</h3>
+</div>
+<div class='check-content'>
+🔍 Checking Redshift cluster utilization in ap-south-1
+📈 Summary:
+   Total Redshift clusters: 0
+   Underutilized clusters: 0
+</div>
+<span class='status-badge status-ok'>ℹ️ Info</span>
+</div>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>🔧</div>
+<h3 class='check-title'>EMR Idle Clusters</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for idle/running EMR clusters in ap-south-1
+📈 Summary:
+   Total EMR clusters: 0
+   Running clusters: 0
+   Potentially idle clusters: 0
+</div>
+<span class='status-badge status-ok'>ℹ️ Info</span>
+</div>
+</div>
+</div>
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>🛠️</div>
+<h3 class='service-title'>Developer Tools</h3>
+<div class='service-badge'>2 Checks</div>
+</div>
+<div class='checks-grid'>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>🏗️</div>
+<h3 class='check-title'>CodeBuild Old Projects</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for old/unused CodeBuild projects (&gt;90 days) in ap-south-1
+✅ No CodeBuild projects found in region ap-south-1
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+<div class='check-card warn'>
+<div class='check-header'>
+<div class='check-icon'>⚙️</div>
+<h3 class='check-title'>CodePipeline Idle Pipelines</h3>
+</div>
+<div class='check-content'>
+🔍 Checking for inactive CodePipeline pipelines (&gt;60 days) in ap-south-1
+✅ No CodePipeline pipelines found in region ap-south-1
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+</div>
+</div>
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>🎯</div>
+<h3 class='service-title'>Management & Governance</h3>
+<div class='service-badge'>5 Checks</div>
+</div>
+<div class='checks-grid'>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>📋</div>
+<h3 class='check-title'>Trusted Advisor</h3>
+</div>
+<div class='check-content'>
+🔍 Checking AWS Trusted Advisor findings
+📊 Checking available Trusted Advisor checks...
+ℹ️ Trusted Advisor detailed checks require Business/Enterprise Support plan
+📋 Basic checks available with all support plans:
+   - Service limits
+   - Security groups
+   - IAM use
+   - MFA on root account
+   - EBS public snapshots
+   - RDS public snapshots
+   - S3 bucket permissions
+
+📏 Service Limits Check:
+   ✅ Service limits API accessible
+</div>
+<span class='status-badge status-ok'>✓ Passed</span>
+</div>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>💰</div>
+<h3 class='check-title'>Cost Explorer Data</h3>
+</div>
+<div class='check-content'>
+🔍 Analyzing AWS Cost Explorer data (last 30 days)
+💰 Cost Analysis (Last 30 Days):
+❌ Cost Explorer access not available or no permissions
+ℹ️  Required IAM permissions: ce:GetCostAndUsage, ce:GetDimensionValues
+
+🚨 Cost Anomaly Detection:
+  ℹ️  For detailed anomaly detection, enable AWS Cost Anomaly Detection service
+  💡 Monitor: EC2, RDS, Data Transfer, and S3 costs as common areas for optimization
+</div>
+<span class='status-badge status-error'>✗ Failed</span>
+</div>
+<div class='check-card info'>
+<div class='check-header'>
+<div class='check-icon'>🎯</div>
+<h3 class='check-title'>Service Quotas</h3>
+</div>
+<div class='check-content'>
+🔍 Checking AWS service quotas and limits in ap-south-1
+
+🏷️ Service: ec2
+   Available quotas: 0
+
+🏷️ Service: rds
+   Available quotas: 0
+
+🏷️ Service: elasticloadbalancing
+   Available quotas: 0
+
+🏷️ Service: lambda
+   Available quotas: 0
+
+🏷️ Service: s3
+   Available quotas: 0
+
+🎯 Key Service Limits:
+  - EC2 Max Instances: 20
+  - Elastic IPs: 5
+
+📈 Summary:
+   Total quotas checked: 0
+   Quotas near limit: 0
+</div>
+<span class='status-badge status-ok'>ℹ️ Info</span>
+</div>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>🔑</div>
-<div class='check-title-container'>
 <h3 class='check-title'>KMS Orphaned Keys</h3>
-<span class='service-badge'>security</span>
-</div>
 </div>
 <div class='check-content'>
 🔍 Checking for orphaned KMS keys in ap-south-1
@@ -976,13 +1173,10 @@ Total Records: 3
 </div>
 <span class='status-badge status-warn'>⚠️ Warning</span>
 </div>
-<div class='check-card warn' data-category='security'>
+<div class='check-card warn'>
 <div class='check-header'>
 <div class='check-icon'>🔐</div>
-<div class='check-title-container'>
 <h3 class='check-title'>Secrets Manager Old Secrets</h3>
-<span class='service-badge'>security</span>
-</div>
 </div>
 <div class='check-content'>
 🔍 Checking for old Secrets Manager secrets (&gt;90 days) in ap-south-1
@@ -992,329 +1186,32 @@ Total Records: 3
 </div>
 <span class='status-badge status-warn'>⚠️ Warning</span>
 </div>
-<div class='check-card info' data-category='monitoring'>
-<div class='check-header'>
-<div class='check-icon'>💰</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Budget Alerts</h3>
-<span class='service-badge'>monitoring</span>
 </div>
 </div>
-<div class='check-content'>
-ℹ️  Checking budgets for AWS Account: 970378220457
---------------------------------------------------
-ℹ️  Budget: My Monthly Cost Budget
-✅   Budget alerts are configured.
+<div class='service-section'>
+<div class='service-header'>
+<div class='service-icon'>🌐</div>
+<h3 class='service-title'>Networking & Security</h3>
+<div class='service-badge'>1 Check</div>
 </div>
-<span class='status-badge status-ok'>✓ Passed</span>
-</div>
-<div class='check-card info' data-category='monitoring'>
-<div class='check-header'>
-<div class='check-icon'>📈</div>
-<div class='check-title-container'>
-<h3 class='check-title'>CloudWatch Alarms</h3>
-<span class='service-badge'>monitoring</span>
-</div>
-</div>
-<div class='check-content'>
-ℹ️  Checking CloudWatch Alarms in ap-south-1
---------------------------------------------
-⚠️  ⚠️ No CloudWatch alarms found in region ap-south-1
-</div>
-<span class='status-badge status-warn'>⚠️ Warning</span>
-</div>
-<div class='check-card info' data-category='monitoring'>
-<div class='check-header'>
-<div class='check-icon'>🏷️</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Resource Tagging</h3>
-<span class='service-badge'>monitoring</span>
-</div>
-</div>
-<div class='check-content'>
-ℹ️  Checking untagged resources for AWS Account: 970378220457
--------------------------------------------------------------
-ℹ️  🔎 Checking EC2 Instances...
-ℹ️  🔎 Checking EBS Volumes...
-ℹ️  🔎 Checking S3 Buckets...
-ℹ️  🔎 Checking RDS Instances...
-ℹ️  🔎 Checking Lambda Functions...
-✅ Untagged resource check completed.
-</div>
-<span class='status-badge status-ok'>✓ Passed</span>
-</div>
-<div class='check-card info' data-category='monitoring'>
+<div class='checks-grid'>
+<div class='check-card info'>
 <div class='check-header'>
 <div class='check-icon'>📝</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Logging & Monitoring</h3>
-<span class='service-badge'>monitoring</span>
-</div>
+<h3 class='check-title'>VPC Flow Logs</h3>
 </div>
 <div class='check-content'>
-ℹ️  📝 Logging & Monitoring Audit
---------------------------------
-⚠️  ⚠️  No multi-region CloudTrail trail found
+🔍 Checking VPC Flow Logs configuration in ap-south-1
+⚠️  VPC vpc-0366077d37eaa0c7e: No flow logs configured
+⚠️  VPC vpc-0695c45a8dac741e0: No flow logs configured
+
+📈 Summary:
+   Total VPCs: 2
+   VPCs with flow logs: 0
+   VPCs without flow logs: 2
+⚠️  Recommendation: Enable VPC Flow Logs for security monitoring and troubleshooting
 </div>
 <span class='status-badge status-warn'>⚠️ Warning</span>
-</div>
-<div class='check-card info' data-category='monitoring'>
-<div class='check-header'>
-<div class='check-icon'>📊</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Cost Anomalies</h3>
-<span class='service-badge'>monitoring</span>
-</div>
-</div>
-<div class='check-content'>
-ℹ️  📊 Cost Anomaly Detection
----------------------------
-ℹ️  Checking for cost anomalies in last 7 days...
-ℹ️  💡 Enable AWS Cost Anomaly Detection for automated monitoring:
-ℹ️  https://console.aws.amazon.com/cost-management/home#/anomaly-detection
-</div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
-</div>
-<div class='check-card warn' data-category='serverless'>
-<div class='check-header'>
-<div class='check-icon'>λ</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Idle Lambda Functions</h3>
-<span class='service-badge'>serverless</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for idle Lambda functions in ap-south-1 (&gt;30 days)
-✅ No Lambda functions found in region ap-south-1
-</div>
-<span class='status-badge status-ok'>✓ Passed</span>
-</div>
-<div class='check-card info' data-category='serverless'>
-<div class='check-header'>
-<div class='check-icon'>📏</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Large Lambda Packages</h3>
-<span class='service-badge'>serverless</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for large Lambda deployment packages (&gt;50MB) in ap-south-1
-📈 Summary:
-   Total functions: 0
-   Large packages: 0
-</div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
-</div>
-<div class='check-card warn' data-category='serverless'>
-<div class='check-header'>
-<div class='check-icon'>🕐</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Lambda Old Runtimes</h3>
-<span class='service-badge'>serverless</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for Lambda functions with outdated runtimes in ap-south-1
-📈 Summary:
-   Total functions: 0
-   Outdated runtimes: 0
-</div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
-</div>
-<div class='check-card warn' data-category='serverless'>
-<div class='check-header'>
-<div class='check-icon'>🤖</div>
-<div class='check-title-container'>
-<h3 class='check-title'>SageMaker Idle Instances</h3>
-<span class='service-badge'>serverless</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for idle SageMaker instances (&gt;24 hours) in ap-south-1
-📓 SageMaker Notebook Instances:
-
-🏋️ SageMaker Training Jobs (recent):
-
-📈 Summary:
-   Total SageMaker instances: 0
-   Potentially idle instances: 0
-</div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
-</div>
-<div class='check-card info' data-category='serverless'>
-<div class='check-header'>
-<div class='check-icon'>🈯</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Comprehend Usage</h3>
-<span class='service-badge'>serverless</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking Amazon Comprehend usage in ap-south-1
-📊 Comprehend Usage Analysis:
-🈯 Dominant Language Detection Jobs:
-
-🏷️ Entity Recognition Jobs:
-
-🔧 Custom Classifiers:
-  Total custom classifiers: 0
-
-📈 Summary:
-   Total Comprehend jobs: 0
-   Active jobs: 0
-   Custom classifiers: 0
-ℹ️  No active Comprehend jobs detected
-</div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
-</div>
-<div class='check-card warn' data-category='serverless'>
-<div class='check-header'>
-<div class='check-icon'>🕷️</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Glue Idle Jobs</h3>
-<span class='service-badge'>serverless</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for idle Glue jobs/crawlers (&gt;30 days inactive) in ap-south-1
-🛠️ Glue Jobs:
-
-🕷️ Glue Crawlers:
-
-📈 Summary:
-   Total Glue jobs: 0
-   Idle jobs: 0
-   Total Glue crawlers: 0
-   Idle crawlers: 0
-</div>
-<span class='status-badge status-warn'>⚠️ Warning</span>
-</div>
-<div class='check-card warn' data-category='serverless'>
-<div class='check-header'>
-<div class='check-icon'>🔧</div>
-<div class='check-title-container'>
-<h3 class='check-title'>EMR Idle Clusters</h3>
-<span class='service-badge'>serverless</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for idle/running EMR clusters in ap-south-1
-📈 Summary:
-   Total EMR clusters: 0
-   Running clusters: 0
-   Potentially idle clusters: 0
-</div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
-</div>
-<div class='check-card warn' data-category='developer'>
-<div class='check-header'>
-<div class='check-icon'>🏗️</div>
-<div class='check-title-container'>
-<h3 class='check-title'>CodeBuild Old Projects</h3>
-<span class='service-badge'>developer</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for old/unused CodeBuild projects (&gt;90 days) in ap-south-1
-✅ No CodeBuild projects found in region ap-south-1
-</div>
-<span class='status-badge status-ok'>✓ Passed</span>
-</div>
-<div class='check-card warn' data-category='developer'>
-<div class='check-header'>
-<div class='check-icon'>⚙️</div>
-<div class='check-title-container'>
-<h3 class='check-title'>CodePipeline Idle Pipelines</h3>
-<span class='service-badge'>developer</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking for inactive CodePipeline pipelines (&gt;60 days) in ap-south-1
-✅ No CodePipeline pipelines found in region ap-south-1
-</div>
-<span class='status-badge status-ok'>✓ Passed</span>
-</div>
-<div class='check-card info' data-category='management'>
-<div class='check-header'>
-<div class='check-icon'>📋</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Trusted Advisor</h3>
-<span class='service-badge'>management</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking AWS Trusted Advisor findings
-📊 Checking available Trusted Advisor checks...
-ℹ️ Trusted Advisor detailed checks require Business/Enterprise Support plan
-📋 Basic checks available with all support plans:
-   - Service limits
-   - Security groups
-   - IAM use
-   - MFA on root account
-   - EBS public snapshots
-   - RDS public snapshots
-   - S3 bucket permissions
-
-📏 Service Limits Check:
-   ✅ Service limits API accessible
-</div>
-<span class='status-badge status-ok'>✓ Passed</span>
-</div>
-<div class='check-card info' data-category='management'>
-<div class='check-header'>
-<div class='check-icon'>💰</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Cost Explorer Data</h3>
-<span class='service-badge'>management</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Analyzing AWS Cost Explorer data (last 30 days)
-💰 Cost Analysis (Last 30 Days):
-❌ Cost Explorer access not available or no permissions
-ℹ️  Required IAM permissions: ce:GetCostAndUsage, ce:GetDimensionValues
-
-🚨 Cost Anomaly Detection:
-  ℹ️  For detailed anomaly detection, enable AWS Cost Anomaly Detection service
-  💡 Monitor: EC2, RDS, Data Transfer, and S3 costs as common areas for optimization
-</div>
-<span class='status-badge status-error'>✗ Failed</span>
-</div>
-<div class='check-card info' data-category='management'>
-<div class='check-header'>
-<div class='check-icon'>🎯</div>
-<div class='check-title-container'>
-<h3 class='check-title'>Service Quotas</h3>
-<span class='service-badge'>management</span>
-</div>
-</div>
-<div class='check-content'>
-🔍 Checking AWS service quotas and limits in ap-south-1
-
-🏷️ Service: ec2
-   Available quotas: 0
-
-🏷️ Service: rds
-   Available quotas: 0
-
-🏷️ Service: elasticloadbalancing
-   Available quotas: 0
-
-🏷️ Service: lambda
-   Available quotas: 0
-
-🏷️ Service: s3
-   Available quotas: 0
-
-🎯 Key Service Limits:
-  - EC2 Max Instances: 20
-  - Elastic IPs: 5
-
-📈 Summary:
-   Total quotas checked: 0
-   Quotas near limit: 0
-</div>
-<span class='status-badge status-ok'>ℹ️ Info</span>
 </div>
 </div>
 </div>
@@ -1324,57 +1221,6 @@ Total Records: 3
 </div>
 ✅ Completed region: ap-south-1
 ----------------------------------------------
-<script>
-function filterChecks(region, category, element) {
-    // Remove active class from all buttons in the same tab navigation
-    const tabNav = element.parentElement;
-    const buttons = tabNav.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    // Add active class to clicked button
-    element.classList.add('active');
-    
-    // Get all check cards in this region
-    const grid = document.getElementById(region + '-checks-grid');
-    const cards = grid.querySelectorAll('.check-card');
-    
-    // Show/hide cards based on category
-    cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-            card.classList.remove('hidden');
-            card.style.animation = 'fadeInUp 0.6s ease forwards';
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-}
-
-// Add keyboard navigation
-document.addEventListener('keydown', function(e) {
-    if (e.altKey) {
-        const regions = document.querySelectorAll('.region-section');
-        regions.forEach(region => {
-            const tabs = region.querySelectorAll('.tab-btn');
-            tabs.forEach((tab, index) => {
-                if (e.key === (index).toString() && index < 10) {
-                    tab.click();
-                }
-            });
-        });
-    }
-});
-
-// Initialize all regions to show all checks
-document.addEventListener('DOMContentLoaded', function() {
-    const regions = document.querySelectorAll('.region-section');
-    regions.forEach(region => {
-        const regionId = region.querySelector('.checks-grid').id.replace('-checks-grid', '');
-        filterChecks(regionId, 'all', region.querySelector('.all-tab'));
-    });
-});
-</script>
 <div class='summary-section'>
 <div class='completion-badge'>
 ✅ AWS Audit Completed
@@ -1390,7 +1236,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div style='background: #fadbd8; padding: 10px; border-radius: 8px;'><strong>❌ Failed:</strong> 1</div>
 <div style='background: #f2f3f4; padding: 10px; border-radius: 8px;'><strong>🔧 Errors:</strong> 0</div>
 </div>
-<p class='timestamp'>Report generated on: 04-Oct-2025 at 00:11:49 IST</p>
+<p class='timestamp'>Report generated on: 05-Oct-2025 at 13:38:21 IST</p>
 <div style='margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; text-align: center;'>
 <h4 style='color: #2c3e50; margin-bottom: 15px;'>🔗 Project Links & Resources</h4>
 <div style='display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;'>
